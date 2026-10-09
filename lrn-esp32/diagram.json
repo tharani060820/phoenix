@@ -1,0 +1,359 @@
+{
+  "version": 1,
+  "author": "LOGI-PULSE",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnStart",
+      "top": -120,
+      "left": 180,
+      "attrs": {
+        "color": "green"
+      }
+    },
+
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnStop",
+      "top": -120,
+      "left": 290,
+      "attrs": {
+        "color": "blue"
+      }
+    },
+
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnSOS",
+      "top": -120,
+      "left": 400,
+      "attrs": {
+        "color": "red"
+      }
+    },
+
+    {
+      "type": "wokwi-slide-switch",
+      "id": "swEngine",
+      "top": 30,
+      "left": 190,
+      "attrs": {
+        "value": "1"
+      }
+    },
+
+    {
+      "type": "wokwi-slide-switch",
+      "id": "swBattery",
+      "top": 30,
+      "left": 310,
+      "attrs": {
+        "value": "1"
+      }
+    },
+
+    {
+      "type": "wokwi-slide-switch",
+      "id": "swTemp",
+      "top": 30,
+      "left": 430,
+      "attrs": {
+        "value": "1"
+      }
+    },
+
+    {
+      "type": "wokwi-slide-switch",
+      "id": "swVibration",
+      "top": 120,
+      "left": 190,
+      "attrs": {
+        "value": "1"
+      }
+    },
+
+    {
+      "type": "wokwi-slide-switch",
+      "id": "swNoSignal",
+      "top": 120,
+      "left": 310,
+      "attrs": {
+        "value": "1"
+      }
+    },
+
+    {
+      "type": "wokwi-led",
+      "id": "ledGreen",
+      "top": 240,
+      "left": 180,
+      "attrs": {
+        "color": "green"
+      }
+    },
+
+    {
+      "type": "wokwi-led",
+      "id": "ledYellow",
+      "top": 240,
+      "left": 300,
+      "attrs": {
+        "color": "yellow"
+      }
+    },
+
+    {
+      "type": "wokwi-led",
+      "id": "ledRed",
+      "top": 240,
+      "left": 420,
+      "attrs": {
+        "color": "red"
+      }
+    },
+
+    {
+      "type": "wokwi-resistor",
+      "id": "rGreen",
+      "top": 300,
+      "left": 170,
+      "attrs": {
+        "value": "220"
+      }
+    },
+
+    {
+      "type": "wokwi-resistor",
+      "id": "rYellow",
+      "top": 300,
+      "left": 290,
+      "attrs": {
+        "value": "220"
+      }
+    },
+
+    {
+      "type": "wokwi-resistor",
+      "id": "rRed",
+      "top": 300,
+      "left": 410,
+      "attrs": {
+        "value": "220"
+      }
+    },
+
+    {
+      "type": "wokwi-buzzer",
+      "id": "buzzer",
+      "top": 240,
+      "left": 520,
+      "attrs": {
+        "volume": "0.15"
+      }
+    }
+  ],
+
+  "connections": [
+    [
+      "esp:25",
+      "btnStart:1.l",
+      "green",
+      []
+    ],
+    [
+      "btnStart:2.l",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+
+    [
+      "esp:26",
+      "btnStop:1.l",
+      "blue",
+      []
+    ],
+    [
+      "btnStop:2.l",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+
+    [
+      "esp:27",
+      "btnSOS:1.l",
+      "red",
+      []
+    ],
+    [
+      "btnSOS:2.l",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+
+    [
+      "esp:13",
+      "swEngine:2",
+      "orange",
+      []
+    ],
+    [
+      "swEngine:1",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+
+    [
+      "esp:14",
+      "swBattery:2",
+      "orange",
+      []
+    ],
+    [
+      "swBattery:1",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+
+    [
+      "esp:16",
+      "swTemp:2",
+      "orange",
+      []
+    ],
+    [
+      "swTemp:1",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+
+    [
+      "esp:17",
+      "swVibration:2",
+      "orange",
+      []
+    ],
+    [
+      "swVibration:1",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+
+    [
+      "esp:18",
+      "swNoSignal:2",
+      "purple",
+      []
+    ],
+    [
+      "swNoSignal:1",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+
+    [
+      "esp:2",
+      "rGreen:1",
+      "green",
+      []
+    ],
+    [
+      "rGreen:2",
+      "ledGreen:A",
+      "green",
+      []
+    ],
+    [
+      "ledGreen:C",
+      "esp:GND.2",
+      "black",
+      []
+    ],
+
+    [
+      "esp:15",
+      "rYellow:1",
+      "yellow",
+      []
+    ],
+    [
+      "rYellow:2",
+      "ledYellow:A",
+      "yellow",
+      []
+    ],
+    [
+      "ledYellow:C",
+      "esp:GND.2",
+      "black",
+      []
+    ],
+
+    [
+      "esp:19",
+      "rRed:1",
+      "red",
+      []
+    ],
+    [
+      "rRed:2",
+      "ledRed:A",
+      "red",
+      []
+    ],
+    [
+      "ledRed:C",
+      "esp:GND.2",
+      "black",
+      []
+    ],
+
+    [
+      "esp:21",
+      "buzzer:2",
+      "purple",
+      []
+    ],
+    [
+      "buzzer:1",
+      "esp:GND.2",
+      "black",
+      []
+    ],
+    [
+      "esp:TX",
+      "$serialMonitor:RX",
+      "",
+      []
+    ],
+    [
+      "esp:RX",
+      "$serialMonitor:TX",
+      "",
+      []
+    ]
+  ],
+
+  "serialMonitor": {
+    "display": "always",
+    "newline": "lf"
+  },
+
+  "dependencies": {}
+}
