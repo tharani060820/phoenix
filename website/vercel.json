@@ -1,0 +1,52 @@
+{
+  "version": 2,
+  "name": "lrn-recovery-system",
+  "builds": [
+    {
+      "src": "main.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "data/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "main.py"
+    },
+    {
+      "src": "/auth",
+      "dest": "main.py"
+    },
+    {
+      "src": "/deliveries",
+      "dest": "main.py"
+    },
+    {
+      "src": "/disruptions",
+      "dest": "main.py"
+    },
+    {
+      "src": "/recovery",
+      "dest": "main.py"
+    },
+    {
+      "src": "/recoveries/(.*)",
+      "dest": "main.py"
+    },
+    {
+      "src": "/adaptive-learning/(.*)",
+      "dest": "main.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}
